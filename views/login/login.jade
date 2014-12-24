@@ -1,0 +1,19 @@
+section#login
+  .container
+    .row
+      .col-xs-12
+        .form-wrap
+          h1 Log in with your email account
+          form#login-form(rolw='form', action='/login', method='post', autocomplete='off')
+            .form-group
+              label.sr-only(for='username') Username
+              input#username.form-control(name='user[username]', type='text', placeholder='username')
+            .form-group
+              label.sr-only(for='key') Password
+              input#key.form-control(name='user[password]', type='password', placeholder='password')
+            if message_login
+              span#message_info.glyphicon.glyphicon-remove-sign  #{message_login}
+            .checkbox
+              span.character-checkbox(onclick='showPassword()')
+              span.label Show Password
+            input#btn-login.btn.btn-custom.btn-lg.btn-block(type='submit', value='Log in')

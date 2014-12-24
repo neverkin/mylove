@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/login.js')
+    script(type='text/javascript').
+      $(document).ready(function() {
+        var current_height = $(window).height();
+        $('#carousel').css('height', current_height - 50);
+        $('#carousel .item').css('height', current_height - 50);
+        $('#login').css('height', current_height);
+      });
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        .nav-header
+          a.navbar-brand(href='MAGIC')
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a.glyphicon.glyphicon-home(href='/')  Home
+            li
+              a.glyphicon.glyphicon-film(href='/movie')  Movie
+            li
+              a.glyphicon.glyphicon-music(href='/music')  Music
+            li
+              a.glyphicon.glyphicon-picture(href='/pics')  Pics
+          if user
+            ul.nav.navbar-nav.navbar-right
+              li
+                a.glyphicon.glyphicon-user(href='/')  #{user.username}
+              li
+                a.glyphicon.glyphicon-log-out(href='/logout')  Logout
+          else
+            ul.nav.navbar-nav.navbar-right 
+              li
+                a.glyphicon.glyphicon-log-in(href='login')  Login
+              li
+                a.glyphicon.glyphicon-pencil(href='reg')  Reg
+  body!= body

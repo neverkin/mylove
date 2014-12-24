@@ -1,0 +1,25 @@
+section#login
+  .container
+    .row
+      .col-xs-12
+        .form-wrap
+          h1 Reg with your email account
+          form#login-form(rolw='form', action='/reg', method='post', autocomplete='off')
+            .form-group
+              label.sr-only(for='username') Usernmae
+              input#username.form-control(name='user[username]', type='text', placeholder='username')
+            .form-group
+              label.sr-only(for='email') Email
+              input#email.form-control(name='user[email]', type='email', placeholder='somebody@example.com')
+            .form-group
+              label.sr-only(for='key') Password
+              input#key.form-control(name='user[password]', type='password', placeholder='password')
+            .form-group
+              label.sr-only(for='key') Repeat-Password
+              input#repeat-key.form-control(name='user[repeat-password]', type='password', placeholder='repeat-password')
+            if message_reg
+              span#message_info.glyphicon.glyphicon-remove-sign  #{message_reg}
+            .checkbox
+              span.character-checkbox(onclick='showPassword()')
+              span.label Show Password
+            input#btn-login.btn.btn-custom.btn-lg.btn-block(type='submit', value='Reg')

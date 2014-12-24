@@ -1,0 +1,13 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^0.8.0",
+    "connect-mongo": "^0.4.2",
+    "crypto": "0.0.3",
+    "express": "2.5.8",
+    "jade": ">= 0.0.1",
+    "mongoose": "^3.8.21"
+  }
+}
